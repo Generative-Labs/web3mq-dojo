@@ -929,6 +929,97 @@
       ]
     },
     {
+      "name": "bind",
+      "inputs": [
+        {
+          "name": "self",
+          "type": "@web3mq_dojo::systems::bind::bind::ContractState"
+        },
+        {
+          "name": "sender_address",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "web3mq_id",
+          "type": "core::felt252"
+        }
+      ],
+      "outputs": [],
+      "class_hash": "0x2f13d3b84ffd4ba06cf27b28bcaf92efc30088d2839ce9e786afc90b15c4869",
+      "dependencies": [],
+      "abi": [
+        {
+          "type": "function",
+          "name": "name",
+          "inputs": [],
+          "outputs": [
+            {
+              "type": "core::felt252"
+            }
+          ],
+          "state_mutability": "view"
+        },
+        {
+          "type": "struct",
+          "name": "dojo::world::IWorldDispatcher",
+          "members": [
+            {
+              "name": "contract_address",
+              "type": "core::starknet::contract_address::ContractAddress"
+            }
+          ]
+        },
+        {
+          "type": "struct",
+          "name": "dojo::world::Context",
+          "members": [
+            {
+              "name": "world",
+              "type": "dojo::world::IWorldDispatcher"
+            },
+            {
+              "name": "origin",
+              "type": "core::starknet::contract_address::ContractAddress"
+            },
+            {
+              "name": "system",
+              "type": "core::felt252"
+            },
+            {
+              "name": "system_class_hash",
+              "type": "core::starknet::class_hash::ClassHash"
+            }
+          ]
+        },
+        {
+          "type": "function",
+          "name": "execute",
+          "inputs": [
+            {
+              "name": "sender_address",
+              "type": "core::starknet::contract_address::ContractAddress"
+            },
+            {
+              "name": "web3mq_id",
+              "type": "core::felt252"
+            },
+            {
+              "name": "ctx",
+              "type": "dojo::world::Context"
+            }
+          ],
+          "outputs": [],
+          "state_mutability": "view"
+        },
+        {
+          "type": "event",
+          "name": "web3mq_dojo::systems::bind::bind::Event",
+          "kind": "enum",
+          "variants": []
+        }
+      ]
+    },
+    {
       "name": "library_call",
       "inputs": [
         {
@@ -1048,6 +1139,77 @@
   ],
   "contracts": [],
   "components": [
+    {
+      "name": "BindChangedEvent",
+      "members": [
+        {
+          "name": "sender",
+          "type": "ContractAddress",
+          "key": true
+        },
+        {
+          "name": "web3mq_id",
+          "type": "felt252",
+          "key": false
+        }
+      ],
+      "class_hash": "0x1cc9a6dca25111adfeb3200c4e3e32958b117c1aee7fe282160ea0094508e2f",
+      "abi": [
+        {
+          "type": "function",
+          "name": "name",
+          "inputs": [],
+          "outputs": [
+            {
+              "type": "core::felt252"
+            }
+          ],
+          "state_mutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "size",
+          "inputs": [],
+          "outputs": [
+            {
+              "type": "core::integer::u32"
+            }
+          ],
+          "state_mutability": "view"
+        },
+        {
+          "type": "enum",
+          "name": "core::bool",
+          "variants": [
+            {
+              "name": "False",
+              "type": "()"
+            },
+            {
+              "name": "True",
+              "type": "()"
+            }
+          ]
+        },
+        {
+          "type": "function",
+          "name": "schema",
+          "inputs": [],
+          "outputs": [
+            {
+              "type": "core::array::Array::<(core::felt252, core::felt252, core::bool)>"
+            }
+          ],
+          "state_mutability": "view"
+        },
+        {
+          "type": "event",
+          "name": "web3mq_dojo::components::bind_changed_event::Event",
+          "kind": "enum",
+          "variants": []
+        }
+      ]
+    },
     {
       "name": "FollowEvent",
       "members": [

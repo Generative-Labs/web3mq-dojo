@@ -1,6 +1,13 @@
 use starknet::ContractAddress;
 
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
+struct BindChangedEvent{
+    #[key]
+    sender: ContractAddress,
+		web3mq_id: felt252
+}
+
+#[derive(Component, Copy, Drop, Serde, SerdeLen)]
 struct FollowEvent{
     #[key]
     sender: ContractAddress,

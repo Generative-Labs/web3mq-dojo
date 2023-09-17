@@ -28,6 +28,13 @@ sozo test
 
 ```rust
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
+struct BindChangedEvent{
+    #[key]
+    sender: ContractAddress,
+		web3mq_id: felt252
+}
+
+#[derive(Component, Copy, Drop, Serde, SerdeLen)]
 struct FollowEvent{
     #[key]
     sender: ContractAddress,
@@ -54,6 +61,15 @@ struct PermissionChangedEvent{
 ```
 
 ### System
+
+- bind
+
+```rust
+#[system]
+mod bind{
+		fn execute(ctx: Context, sender_address:ContractAddress, web3mq_id:felt252)
+}
+```
 
 - follow
 

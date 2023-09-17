@@ -3,17 +3,19 @@ mod tests {
     use web3mq_dojo::components::{follow_event, FollowEvent};
     use web3mq_dojo::components::{block_event, BlockEvent};
     use web3mq_dojo::components::{permission_changed_event, PermissionChangedEvent};
+    use web3mq_dojo::components::{bind_changed_event, BindChangedEvent};
     use web3mq_dojo::systems::follow::follow;
     use web3mq_dojo::systems::block::block;
     use web3mq_dojo::systems::permission::permission;
+    use web3mq_dojo::systems::bind::bind;
     use dojo::world::{IWorldDispatcherTrait, IWorldDispatcher};
     use dojo::test_utils::spawn_test_world;
     use debug::PrintTrait;
     fn setup_world() -> IWorldDispatcher {
         // components
-        let mut components = array![follow_event::TEST_CLASS_HASH, block_event::TEST_CLASS_HASH, permission_changed_event::TEST_CLASS_HASH];
+        let mut components = array![follow_event::TEST_CLASS_HASH, block_event::TEST_CLASS_HASH, permission_changed_event::TEST_CLASS_HASH, bind_changed_event::TEST_CLASS_HASH];
         // systems
-        let mut systems = array![follow::TEST_CLASS_HASH, block::TEST_CLASS_HASH, permission::TEST_CLASS_HASH];
+        let mut systems = array![follow::TEST_CLASS_HASH, block::TEST_CLASS_HASH, permission::TEST_CLASS_HASH, bind::TEST_CLASS_HASH];
         let world = spawn_test_world(components, systems);
         return world;
     }
@@ -39,5 +41,9 @@ mod tests {
         world.execute('permission', array![1_felt252, 0_felt252]);
         let permission_changed_event = get !(world, 1_felt252,PermissionChangedEvent);
         assert(permission_changed_event.permission == 0, 'permission error');
+
+        world.execute('bind', array![1_felt252, 3_felt252]);
+        let bind_changed_event = get !(world, 1_felt252, BindChangedEvent);
+        assert(bind_changed_event.web3mq_id == 3_felt252, 'bind error');
     }
 }
