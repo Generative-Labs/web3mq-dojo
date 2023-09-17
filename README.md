@@ -31,7 +31,7 @@ sozo test
 struct BindChangedEvent{
     #[key]
     sender: ContractAddress,
-		web3mq_id: felt252
+    web3mq_id: felt252
 }
 
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
@@ -67,7 +67,7 @@ struct PermissionChangedEvent{
 ```rust
 #[system]
 mod bind{
-		fn execute(ctx: Context, sender_address:ContractAddress, web3mq_id:felt252)
+    fn execute(ctx: Context, sender_address:ContractAddress, web3mq_id:felt252)
 }
 ```
 
