@@ -31,18 +31,18 @@ sozo test
 struct FollowEvent{
     #[key]
     sender: ContractAddress,
-		#[key]
+    #[key]
     target: ContractAddress,
-		follow: bool
+    follow: bool
 }
 
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
 struct BlockEvent{
     #[key]
     sender: ContractAddress,
-		#[key]
+    #[key]
     target: ContractAddress,
-		block: bool
+    block: bool
 }
 
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
