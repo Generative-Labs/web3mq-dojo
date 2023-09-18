@@ -28,14 +28,14 @@ sozo test
 
 ```rust
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
-struct BindChangedEvent{
+struct Bind{
     #[key]
     sender: ContractAddress,
     web3mq_id: felt252
 }
 
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
-struct FollowEvent{
+struct Follow{
     #[key]
     sender: ContractAddress,
     #[key]
@@ -44,7 +44,7 @@ struct FollowEvent{
 }
 
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
-struct BlockEvent{
+struct Block{
     #[key]
     sender: ContractAddress,
     #[key]
@@ -53,7 +53,7 @@ struct BlockEvent{
 }
 
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
-struct PermissionChangedEvent{
+struct Permission{
     #[key]
     sender: ContractAddress,
     permission: u32
@@ -66,7 +66,7 @@ struct PermissionChangedEvent{
 
 ```rust
 #[system]
-mod bind{
+mod bind_{
     fn execute(ctx: Context, sender_address:ContractAddress, web3mq_id:felt252)
 }
 ```
@@ -75,7 +75,7 @@ mod bind{
 
 ```rust
 #[system]
-mod follow{
+mod follow_{
     fn execute(ctx: Context, sender_address:ContractAddress, target_address:ContractAddress, follow: bool)
 }
 ```
@@ -84,7 +84,7 @@ mod follow{
 
 ```rust
 #[system]
-mod block{
+mod block_{
     fn execute(ctx: Context, sender_address:ContractAddress, target_address:ContractAddress, block: bool)
 }
 ```
@@ -93,7 +93,7 @@ mod block{
 
 ```rust
 #[system]
-mod permission{
+mod permission_{
     fn execute(ctx: Context, sender_address:ContractAddress, permission:u32)
 }
 ```
