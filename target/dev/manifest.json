@@ -612,11 +612,11 @@
   },
   "systems": [
     {
-      "name": "follow",
+      "name": "follow_",
       "inputs": [
         {
           "name": "self",
-          "type": "@web3mq_dojo::systems::follow::follow::ContractState"
+          "type": "@web3mq_dojo::systems::follow::follow_::ContractState"
         },
         {
           "name": "sender_address",
@@ -632,7 +632,7 @@
         }
       ],
       "outputs": [],
-      "class_hash": "0x6f3d40993656e324a637a796ccc596e2150e592a78b0a467fba22f75ba96ac7",
+      "class_hash": "0x1e1c025c1d078e6ed0c69c5c183b206e31276a91346205952a86e4e0e8b17fa",
       "dependencies": [],
       "abi": [
         {
@@ -718,18 +718,18 @@
         },
         {
           "type": "event",
-          "name": "web3mq_dojo::systems::follow::follow::Event",
+          "name": "web3mq_dojo::systems::follow::follow_::Event",
           "kind": "enum",
           "variants": []
         }
       ]
     },
     {
-      "name": "block",
+      "name": "block_",
       "inputs": [
         {
           "name": "self",
-          "type": "@web3mq_dojo::systems::block::block::ContractState"
+          "type": "@web3mq_dojo::systems::block::block_::ContractState"
         },
         {
           "name": "sender_address",
@@ -745,7 +745,7 @@
         }
       ],
       "outputs": [],
-      "class_hash": "0x3b648be340550a74b08bdd408f2150aaffbc387095cf7aca5337a5977d6c149",
+      "class_hash": "0x508ccc5e35ddcdb9250022769e81cec64b6e0992d6e3dba8c4d0a6004f74afb",
       "dependencies": [],
       "abi": [
         {
@@ -831,18 +831,18 @@
         },
         {
           "type": "event",
-          "name": "web3mq_dojo::systems::block::block::Event",
+          "name": "web3mq_dojo::systems::block::block_::Event",
           "kind": "enum",
           "variants": []
         }
       ]
     },
     {
-      "name": "permission",
+      "name": "permission_",
       "inputs": [
         {
           "name": "self",
-          "type": "@web3mq_dojo::systems::permission::permission::ContractState"
+          "type": "@web3mq_dojo::systems::permission::permission_::ContractState"
         },
         {
           "name": "sender_address",
@@ -854,7 +854,7 @@
         }
       ],
       "outputs": [],
-      "class_hash": "0x5a584d8d53a5d03cd1b26b453c517f56e93f358bd1381174ab9cc81fa1a9f96",
+      "class_hash": "0x571740f747d31d58986228389a777ba68c707c9ecde75eca20bc9e24982a6c1",
       "dependencies": [],
       "abi": [
         {
@@ -922,18 +922,18 @@
         },
         {
           "type": "event",
-          "name": "web3mq_dojo::systems::permission::permission::Event",
+          "name": "web3mq_dojo::systems::permission::permission_::Event",
           "kind": "enum",
           "variants": []
         }
       ]
     },
     {
-      "name": "bind",
+      "name": "bind_",
       "inputs": [
         {
           "name": "self",
-          "type": "@web3mq_dojo::systems::bind::bind::ContractState"
+          "type": "@web3mq_dojo::systems::bind::bind_::ContractState"
         },
         {
           "name": "sender_address",
@@ -945,7 +945,7 @@
         }
       ],
       "outputs": [],
-      "class_hash": "0x2f13d3b84ffd4ba06cf27b28bcaf92efc30088d2839ce9e786afc90b15c4869",
+      "class_hash": "0x7cd1b8436b3950f91dcbbc8eb049aedd1ecff72ecd7329ae758a3827150e058",
       "dependencies": [],
       "abi": [
         {
@@ -1013,7 +1013,7 @@
         },
         {
           "type": "event",
-          "name": "web3mq_dojo::systems::bind::bind::Event",
+          "name": "web3mq_dojo::systems::bind::bind_::Event",
           "kind": "enum",
           "variants": []
         }
@@ -1140,7 +1140,7 @@
   "contracts": [],
   "components": [
     {
-      "name": "BindChangedEvent",
+      "name": "Bind",
       "members": [
         {
           "name": "sender",
@@ -1153,7 +1153,7 @@
           "key": false
         }
       ],
-      "class_hash": "0x1cc9a6dca25111adfeb3200c4e3e32958b117c1aee7fe282160ea0094508e2f",
+      "class_hash": "0x22731aa4d3b0f64ed763463c41076997c8071d3680650db52b4408d7d3d11a8",
       "abi": [
         {
           "type": "function",
@@ -1204,14 +1204,14 @@
         },
         {
           "type": "event",
-          "name": "web3mq_dojo::components::bind_changed_event::Event",
+          "name": "web3mq_dojo::components::bind::Event",
           "kind": "enum",
           "variants": []
         }
       ]
     },
     {
-      "name": "FollowEvent",
+      "name": "Follow",
       "members": [
         {
           "name": "sender",
@@ -1229,7 +1229,7 @@
           "key": false
         }
       ],
-      "class_hash": "0x3e58cdfacfc0ad6a2f5f2791e011270d4107c23c0ae25ab1610f42ea2bde3b",
+      "class_hash": "0x65a5780d822d871303071a91ecc4ef9351d7cbe9b69355a4c2f8b952350e756",
       "abi": [
         {
           "type": "function",
@@ -1280,14 +1280,14 @@
         },
         {
           "type": "event",
-          "name": "web3mq_dojo::components::follow_event::Event",
+          "name": "web3mq_dojo::components::follow::Event",
           "kind": "enum",
           "variants": []
         }
       ]
     },
     {
-      "name": "BlockEvent",
+      "name": "Block",
       "members": [
         {
           "name": "sender",
@@ -1305,7 +1305,7 @@
           "key": false
         }
       ],
-      "class_hash": "0x3e9610a8757b853554fe0eda18b1f9fa6f0e879dd6c1b2932adb45d2763312d",
+      "class_hash": "0x2cc67c3a66c2b1f970c07b826035174ec5025e8cf2f746000c3a25e2869c35",
       "abi": [
         {
           "type": "function",
@@ -1356,14 +1356,14 @@
         },
         {
           "type": "event",
-          "name": "web3mq_dojo::components::block_event::Event",
+          "name": "web3mq_dojo::components::block::Event",
           "kind": "enum",
           "variants": []
         }
       ]
     },
     {
-      "name": "PermissionChangedEvent",
+      "name": "Permission",
       "members": [
         {
           "name": "sender",
@@ -1376,7 +1376,7 @@
           "key": false
         }
       ],
-      "class_hash": "0xe5e3c7d0b1d5f5514959627598fced3f135bd4b297a96e93b3c3bd8dcbc9b0",
+      "class_hash": "0x4ae99da102da8633ebc1325d485b31e89791e7a0ef30469bad4edbd2b822eb5",
       "abi": [
         {
           "type": "function",
@@ -1427,7 +1427,7 @@
         },
         {
           "type": "event",
-          "name": "web3mq_dojo::components::permission_changed_event::Event",
+          "name": "web3mq_dojo::components::permission::Event",
           "kind": "enum",
           "variants": []
         }

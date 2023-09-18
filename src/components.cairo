@@ -1,14 +1,14 @@
 use starknet::ContractAddress;
 
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
-struct BindChangedEvent{
+struct Bind{
     #[key]
     sender: ContractAddress,
 		web3mq_id: felt252
 }
 
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
-struct FollowEvent{
+struct Follow{
     #[key]
     sender: ContractAddress,
 		#[key]
@@ -17,7 +17,7 @@ struct FollowEvent{
 }
 
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
-struct BlockEvent{
+struct Block{
     #[key]
     sender: ContractAddress,
 		#[key]
@@ -26,7 +26,7 @@ struct BlockEvent{
 }
 
 #[derive(Component, Copy, Drop, Serde, SerdeLen)]
-struct PermissionChangedEvent{
+struct Permission{
     #[key]
     sender: ContractAddress,
     permission: u32
